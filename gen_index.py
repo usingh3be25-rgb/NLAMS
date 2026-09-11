@@ -1,0 +1,61 @@
+﻿import os
+
+index_html = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>National Land Acquisition & Management System (NLAMS) - Government of India</title>
+  
+  <!-- Favicon / Ashoka emblem motif -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D97706'><path d='M12 2L4 7v10l8 5 8-5V7l-8-5z'/></svg>">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- React 18 & ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Babel Standalone for real-time JSX execution -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    /* Custom scrollbars and styling */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f5f9; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #475569; }
+    .leaflet-popup-content-wrapper { border-radius: 12px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); border: 1px solid #e2e8f0; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased">
+  <div id="root">
+    <div class="min-h-screen bg-slate-900 text-white flex flex-col items-center justify-center space-y-4">
+      <div class="w-12 h-12 rounded-xl bg-amber-500 flex items-center justify-center text-slate-950 font-black animate-pulse">
+        NLAMS
+      </div>
+      <div class="text-sm font-bold text-slate-200">National Land Acquisition &amp; Management System</div>
+      <div class="text-xs text-slate-400">Loading Interoperable Portal...</div>
+    </div>
+  </div>
+
+  <script type="text/babel" data-type="module">
+    import { App } from './src/App.js';
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<App />);
+  </script>
+</body>
+</html>
+"""
+
+with open(r"C:\Users\asus\.gemini\antigravity\scratch\nlams\index.html", "w", encoding="utf-8") as f:
+    f.write(index_html)
+
+print("Written index.html successfully")
